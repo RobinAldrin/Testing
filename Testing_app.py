@@ -1,11 +1,8 @@
-import pandas as pd
+import pandas
+my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
+# my_fruit_list.setindex('Fruit' , inplace = True)
 
-student_dict = {'Name': ['Joe', 'Nat', 'Harry'], 'Age': [20, 21, 19], 'Marks': [85.10, 77.80, 91.54]}
-
-# create DataFrame from dict
-student_df = pd.DataFrame(student_dict)
-streamlit.table(student_dict)
-
-# set index using column
-student_df = student_df.set_index('Name')
-print(student_df)
+# Put a Pick-up list
+streamlit.multiselect("Pick some fruits: " , list (my_fruit_list.Fruit))
+# Table Display
+streamlit.dataframe(my_fruit_list)
