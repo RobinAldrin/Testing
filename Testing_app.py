@@ -4,7 +4,7 @@ student_dict = {'Name': ['Joe', 'Nat', 'Harry'], 'Age': [20, 21, 19], 'Marks': [
 
 # create DataFrame from dict
 student_df = pd.DataFrame(student_dict)
-streamlit.print(student_dict)
+streamlit.table(student_dict)
 
 # set index using column
 student_df = student_df.set_index('Name')
